@@ -120,7 +120,7 @@ async function onBuy(bookId, price) {
     const userId = localStorage.getItem("userId");
 
     if (!userId) {
-        alert("Debes iniciar sesión para comprar.");
+        alert("Debes iniciar sesión.");
         return;
     }
 
@@ -136,7 +136,7 @@ async function onBuy(bookId, price) {
     const pay = await registerPayment(order.order_id, "transferencia", price);
 
     if (pay.ok) {
-        alert("Gracias por tu compra ✨📘");
+        alert("Gracias✨📘");
         closeModal("#modalCompra");
     } else {
         alert(pay.error || "Error procesando el pago.");
